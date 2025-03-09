@@ -1,0 +1,1 @@
+data class DataBarang(val id: Int, var name: String, var harga: Int, var stok: Int)
