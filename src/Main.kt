@@ -24,7 +24,7 @@ fun main() {
                 } while (id == null)
 
                 print("Masukkan Nama Barang: ")
-                name = readln().orEmpty()
+                name = readln()
 
                 do {
                     print("Masukkan Harga Barang: ")
@@ -44,7 +44,6 @@ fun main() {
 
             3 -> {
                 var id: Int?
-
                 do {
                     print("Masukkan ID Barang: ")
                     id = readlnOrNull()?.toIntOrNull()
@@ -60,7 +59,7 @@ fun main() {
                 var newName: String
                 do {
                     print("Masukkan Nama Barang Baru: ")
-                    newName = readln().orEmpty()
+                    newName = readln()
                     if (newName.isEmpty()) println("Nama Jangan Kosong!")
                 } while (newName.isEmpty())
 
