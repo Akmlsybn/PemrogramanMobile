@@ -88,14 +88,7 @@ fun main() {
                     id = readlnOrNull()?.toIntOrNull()
                     if (id == null) println("ID Tidak Valid!")
                 } while (id == null)
-
-                val barangHapus = barang.barang.find { it.id == id }
-                if (barangHapus != null) {
-                    barang.barang.remove(barangHapus)
-                    println("Barang Berhasil Dihapus")
-                } else {
-                    println("Barang Tidak Valid!")
-                }
+                barang.hapusBarang(id)
             }
 
             5 ->{
