@@ -22,19 +22,13 @@ class Barang {
             harga = newHarga
             stok = updateStok
             println("Barang Dengan perubahan: $this berhasil dirubah")
-        } ?: { println("Barang dengan ID: $id Tidak Ada") }
+        } ?: println("Barang dengan ID: $id Tidak Ada")
     }
 
     fun hapusBarang(id: Int) {
         barang.find { it.id == id }?.also {
             barang.remove(it)
             println("Barang Dengan ID: $id Berhasil Di Hapus ")
-        } ?: { println("Barang dengan ID: $id Tidak Ada") }
-    }
-
-    fun showBarang(id: Int) {
-        barang.find { it.id == id }?.run {
-            println("Detail Barang: $this")
-        } ?: { println("Barang Dengan ID: $id Tidak Ada") }
+        } ?: println("Barang dengan ID: $id Tidak Ada")
     }
 }
