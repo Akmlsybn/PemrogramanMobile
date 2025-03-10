@@ -5,6 +5,7 @@ class Barang {
         barang.add(DataBarang(id, name, harga, stok)).also {
             println("Barang Berhasil Ditambahkan")
         }
+
     }
 
     fun listBarang() {
@@ -21,19 +22,19 @@ class Barang {
             harga = newHarga
             stok = updateStok
             println("Barang Dengan perubahan: $this berhasil dirubah")
-        } ?.run { println("Barang dengan ID: $id Tidak Ada") }
+        } ?: { println("Barang dengan ID: $id Tidak Ada") }
     }
 
     fun hapusBarang(id: Int) {
         barang.find { it.id == id }?.also {
             barang.remove(it)
             println("Barang Dengan ID: $id Berhasil Di Hapus ")
-        } ?.run { println("Barang dengan ID: $id Tidak Ada") }
+        } ?: { println("Barang dengan ID: $id Tidak Ada") }
     }
 
     fun showBarang(id: Int) {
         barang.find { it.id == id }?.run {
             println("Detail Barang: $this")
-        } ?.run { println("Barang Dengan ID: $id Tidak Ada") }
+        } ?: { println("Barang Dengan ID: $id Tidak Ada") }
     }
 }
